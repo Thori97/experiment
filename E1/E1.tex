@@ -1,0 +1,60 @@
+\documentclass[dvipdfmx]{jsarticle}
+
+\usepackage[version=3]{mhchem}
+\usepackage{amsmath}
+\usepackage[siunitx]{circuitikz}
+\usepackage{graphicx}
+\usepackage{here}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\title{E1実験考察レポート}
+\author{03190449  堀 紡希}
+\date{\ 7月2日}
+\maketitle
+
+\section{考察課題}
+
+\begin{enumerate}
+\item[(1)]
+pが大気圧程度である場合の衝突電離係数$\alpha$を表す実験式
+
+実験テキストによるとpが比較的小さい時
+\begin{equation}
+\frac{\alpha}{p} = A\exp{(-\frac{Bp}{E})}
+\end{equation}
+で衝突電離係数$\alpha$(1個の電子の単位長あたりの電離回数)が求められる。
+
+一方pが大気圧程度である時
+\begin{equation}
+\frac{\alpha}{p} = k_{1}(\frac{E}{p}-k_{2})^{2}+k_{3}
+\end{equation}
+で表される$^{[3]}$。
+(2)式では(1)式と違って$\alpha$が$E$の二乗に比例していて(1)よりも増加は急峻である。
+
+\
+\item[(4)]窒素分子のエネルギー遷移過程
+
+$\lambda$ = 350[nm], 390[nm]に対応する波数$K$はそれぞれ$K = 8065.5 \times 1239.85/ \lambda$より$K =$ 25641, 28571[$cm^{-1}$]である。
+
+実験テキスト図E1.15でエネルギー準位の中でエネルギー準位同士の差がその範囲にある組を探すと、
+SP02(26290cm$^{-1}$),SP13(26637cm$^{-1}$),SP24(26958cm$^{-1}$),SP35(27243cm$^{-1}$)であった。これが実験で観測されたはずである。
+これらのエネルギー$K$をジュールに変換して、それを発生させる電子のエネルギーと速度を求める。
+
+\[ E_{d}[eV] = \frac{K[cm^{-1}]}{8065.5}\]
+\[ \frac{1}{2}mv^{2} = E_{d}[J]\]
+として$m = 9.1\times10^{-31}$[kg], 1eV = $1.6\times10^{-19}$[J]として、おおよそ
+$E_{d}= 3.3$[eV], $v = 1.1\times10^{6}$[m/s]必要となる。
+
+
+
+
+\end{enumerate}
+\section{参考文献}
+[1]東京大学工学部：「電気電子情報第一(前期) 実験テキスト」, 2019.
+
+[2]廣瀬明：「電気電子計測」, 数理工学社, 2003.
+
+[3]日高邦彦：「高電圧工学」, 数理工学社, 2013
+\end{document}

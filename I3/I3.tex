@@ -1,0 +1,122 @@
+\documentclass[dvipdfmx]{jsarticle}
+
+\usepackage[version=3]{mhchem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{here}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\title{I3実験レポート}
+\author{22班A 03190513 宮野広基 03190449  堀 紡希}
+\date{\ 8月1日}
+\maketitle
+
+
+\section{達成した項目}
+
+・コマンドライン引数の違いによって、同じプログラムからサーバ、クライアントのどちらも実行できるようにした。
+
+・データ数nに対して線形時間のオーダーO(n)に比例する電話料金を表示できるようにした。
+
+・Enter+scanfではなく擬似kbhit関数でキーを押した瞬間にキーの値の取り込みができるようにした。
+
+・音声データを送信する前に高速フーリエ変換を行い、人間の声の領域以外の成分を0にしてカットしてから送信、受信してから受信側がカットされた0の成分を補完することで送られるデータを軽くした。
+
+・FFTした後の振幅が閾値より小さいものをカットすることで雑音を除去した
+
+・FFTした後の0を補完する位置をずらすことで音の高さを変えた。
+
+・着信音が鳴るようにした。
+
+Ctrl+Cで切らなくていいように通信切断ボタンを作った。
+
+・講義で扱ったFFTのプログラムを利用して,送信側で音声をFFTし,受信側でIFFTをするようにすることで通信データの量を削減,さらにバンドパスフィルタをかけた.
+
+・recのbufferの大きさを変えるオプションを調べ,遅延と雑音が適切になるようにした.
+
+・引数が足りない場合はヘルプを表示するようにした.また同時にプログラムからifconfigを呼び出して自分のPCのIPアドレスを表示するようにした。
+
+・recの標準エラー出力を捨てるようにした.しかしデバッグの効率が下がったので結局実演では使わなかった.
+
+
+
+\section{問題点を克服する過程で行った調査や実験}
+
+・送受信する毎に0.1ドルを加算することで線形時間に比例する電話料金を実装した。試行錯誤した結果、これが実際の電話料金に最も近い値になった。
+
+・音を高くする、低くするなどの信号をFFTして送るスペクトル列の最後に加えていたが、なぜか時々意図しない値に変わったので、char型で受け付けたデータを十分離れた値のdouble型の数値に変換して送ることで誤送信を防いだ。
+
+・一般に使われているkbhit関数がLinuxで使うことができなかったので以下のように実装した。keyboardがhitされているときは1, それ以外は0を返す。
+
+\begin{lstlisting}[frame = single, basicstyle = \ttfamily\footnotesize]
+int kbhit(void)
+{
+struct termios oldt, newt;
+int ch;
+int oldf;
+
+tcgetattr(STDIN_FILENO, &oldt);
+newt = oldt;
+newt.c_lflag &= ~(ICANON | ECHO);
+tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+
+ch = getchar();
+
+tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+fcntl(STDIN_FILENO, F_SETFL, oldf);
+
+if (ch != EOF) {
+ungetc(ch, stdin);
+return 1;
+}
+
+return 0;
+}
+\end{lstlisting}
+
+
+
+・FFTをする前後のデータ量を調査した.
+1秒当たりのサンプル数を$f_{sample}$としてunsigned char型のデータとして送受信していたので,FFT前の通信量は
+\begin{equation}
+f_{sample} * 1 * 2= 2f_{sample}[byte] 
+\end{equation}
+だけのデータを送信していた.一方でこの音声データをN個の点で区切ってFFTを行い,その結果から得た周波数スペクトルをdouble型のデータとして送受信することを考える.また人間の声の成分が多く含まれる周波数スペクトルのみを取り出すこととした.このときバンドパスフィルタの下限と上限をそれぞれ$f_1,f_2[Hz]$とすると,周波数スペクトルのN個のdouble型のデータのうち$\frac{f_1*N}{f_{sample}}$から$\frac{f_2*N}{f_{sample}}$までのデータを送ればいいことが分かる.したがって1秒当たりの送信データ量は
+\begin{align}
+&\frac{f_{sample}}{N}*(\frac{f_2*N}{f_{sample}}-\frac{f_1*N}{f_{sample}})*8*2[byte]\\
+&= 16(f_{2}-f_{1})
+\end{align}
+
+ここで$f_{sample}$ = 44100, N = 8192, $f_1$ = 300, $f_2$ = 1500とすると,式(1)は44100[byte/s]に対して式(3)は19200[byte/s]となり,元の約43.5\%になっていることが分かる.したがってデータの圧縮ができた.
+
+
+・通信が繋がった瞬間にrecとplayがスタートできるようにpopenコマンドを用いてコマンドを実行することでサーバが通信を開始した時の音がクライアント側に聞こえるという問題点を解決したので以下にそのコードを示しておく。
+
+\begin{lstlisting}[frame = single, basicstyle = \ttfamily\footnotesize]
+char	*cmdrec = "rec --buffer 16384 -t raw -b 16 -c 1 -e s -r 44100 - ";
+	if ( (fpr=popen(cmdrec,"r")) ==NULL) {
+		perror ("can not exec commad");
+		exit(EXIT_FAILURE);
+	}
+
+    FILE     *fpp;
+    char     *cmdplay = "play --buffer 16384 -t raw -b 16 -c 1 -e s -r 44100 - ";
+    if ( (fpp=popen(cmdplay,"w")) ==NULL) {
+		perror ("can not exec commad");
+		exit(EXIT_FAILURE);
+	}
+\end{lstlisting}
+
+\section{ソースコード}
+zip中のファイルで添付しておく。
+着信音のwavファイルも添付しておく。
+
+\section{参考文献}
+[1]東京大学工学部：「電気電子情報第一(前期) 実験テキスト」, 2019.
+
+\end{document}
