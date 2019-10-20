@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.7.29)  16 OCT 2019 18:51
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.7.29)  21 OCT 2019 02:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1048,14 +1048,46 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 108.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 108.
- [3] [4] [5] [6] (./document.aux) ) 
+File: ImagBz.jpg Graphic file (type bmp)
+<ImagBz.jpg>
+ [3] [4]
+File: Ge.png Graphic file (type bmp)
+<Ge.png>
+File: Si04.png Graphic file (type bmp)
+<Si04.png>
+
+Overfull \hbox (4.01566pt too wide) in paragraph at lines 148--149
+ [] 
+ []
+
+File: GaAs6.png Graphic file (type bmp)
+<GaAs6.png>
+[5]
+File: GaAs4.png Graphic file (type bmp)
+<GaAs4.png>
+File: Si045.png Graphic file (type bmp)
+<Si045.png>
+
+Overfull \hbox (29.91267pt too wide) in paragraph at lines 169--170
+ [] 
+ []
+
+[6]
+File: hyou.png Graphic file (type bmp)
+<hyou.png>
+File: idoudo.png Graphic file (type bmp)
+<idoudo.png>
+ [7]
+File: alenius.png Graphic file (type bmp)
+<alenius.png>
+ [8] [9] [10] [11] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 29753 strings out of 493638
- 699492 string characters out of 6141726
- 804751 words of memory out of 5000000
- 33055 multiletter control sequences out of 15000+600000
- 544836 words of font info for 90 fonts, out of 8000000 for 9000
+ 29799 strings out of 493638
+ 700230 string characters out of 6141726
+ 804750 words of memory out of 5000000
+ 33078 multiletter control sequences out of 15000+600000
+ 545980 words of font info for 94 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  62i,9n,56p,10370b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on document.dvi (6 pages, 16752 bytes).
+Output written on document.dvi (11 pages, 23648 bytes).

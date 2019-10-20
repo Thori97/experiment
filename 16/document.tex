@@ -11,7 +11,7 @@
 \begin{document}
 \title{16 半導体デバイスキャリア統計と電子輸送現象　 総合報告書}
 \author{電子情報工学科 03-190449　堀 紡希}
-\date{\ 10月26日}
+\date{\ 10月21日}
 \maketitle
 
 
@@ -124,6 +124,80 @@ R_{\rm{H}} = \frac{d}{B}\cdot \Delta R_{\rm{AC}\cdot \rm{BD}}
 なお本実験はプログラムを用いて測定する。
 \section{結果}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.7]{ImagBz.jpg}
+\caption{$B_{z}$と$I_{mag}$の関係}
+\end{center}
+\end{figure}
+
+図3は$B_{z}$と$I_{mag}$の関係であり、予想通り、$B_{z}$が$I_{mag}$に比例している。
+
+\newpage
+以下は各試料のホール効果特性である。縦軸にホール電圧、横軸に$I_{x}B_{z}/d$をとることで、式(1)からこれらのグラフの傾きがホール係数になる。
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.6]{Ge.png}
+\caption{Ge試料のホール効果特性}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.6]{Si04.png}
+\caption{Si試料(0.4mm)のホール効果特性}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.6]{GaAs6.png}
+\caption{Si試料(0.45mm)のホール効果特性}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.6]{GaAs4.png}
+\caption{GaAs試料(4ピン)のホール効果特性}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.6]{Si045.png}
+\caption{GaAs試料(6ピン)のホール効果特性}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.4]{hyou.png}
+\end{center}
+\end{figure}
+
+この表が各試料の測定結果のまとめである。キャリアタイプがnである方が移動度が大きい傾向がある。
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 1]{idoudo.png}
+\caption{Ge試料の移動度の温度依存性}
+\end{center}
+\end{figure}
+図9はGe試料の温度を変化させた時の移動度の変化である。$\log{T} = 2.5$を境に傾きが変化している。
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 1]{alenius.png}
+\caption{Ge試料のキャリア濃度のアレニウスプロット}
+\end{center}
+\end{figure}
+
+図10はGe試料のアレニウスプロットである。中央にはっきりと出払い領域が現れ、その左には真性領域、分かりづらいが右にフリーズアウト領域が確認できる。
+
 \section{考察}
 \subsection*{(1)　移動度}
 移動度は、電界$E$中の、キャリアの平均速度$<v>$を用いて
@@ -167,20 +241,36 @@ $n(E) \propto \sqrt{E}, f(E) \propto \frac{1}{1+\exp{\left(\frac{E-\mu}{k_{0}T}\
 これらをかけてルートをとることで、真性キャリア濃度が、
 \[n_{i} \propto \exp{\left(-\frac{E_{G}}{2kT}\right)}\]
 が得られる。
-\subsection*{(4)}
-図『後で記入』より、$T = 300$Kほどで真性領域に達している。
-\subsection*{(5)}
-実験(2)の結果図（後で記入）から、
+\subsection*{(4)　アレニウスプロットの分析}
+実験結果の、図10より、$1/T = 0.0032$、つまり$T = 310$Kほどで真性領域に達している。
+
+一方、伝導体と価電子帯の実効状態密度を$N_{C}, N_{V}$とおくと、真性キャリア濃度$n_{i}$が
+\begin{equation}
+n_{i} = \sqrt{N_{C}N_{V}}\exp{\left(-\frac{E_{G}}{2kT}\right)}
+\end{equation}
+ただし、
+\begin{equation}
+N_{C} = 2\left(\frac{2\pi m_{e}kT}{h^{2}}\right)^{\frac{3}{2}}\\
+, N_{V} = 2\left(\frac{2\pi m_{h}kT}{h^{2}}\right)^{\frac{3}{2}}
+\end{equation}
+
+理論式(17)に各値を代入し、アレニウスプロットのグラフを描画し、実験で得られたドナー濃度と等しくなる点を求めると、$1/T = 0.0029$すなわち、$T = 350K$ほどで出払い領域から、真性領域に達するという計算結果を得た。
+
+ここで実験値と理論値が50Kほど異なっており10\% ほどの誤差があるが、実際は出払い領域と真性領域の境界ははっきりしていない、文献値と試料の値が異なるといったことが原因として考えられる。
+
+バンドギャップは実験のアレニウスプロットの真性領域の傾きから求められた値が、0.70eV、一方で文献値が0.69eVであり、約1\% の誤差で一致している。
+\subsection*{(5)　移動度の温度依存性}
+実験(2)の結果図9から、
 低温(100K周辺まで)ではおおよそ傾きが-1.8ほどになっていて音響フォノン散乱が支配的になっており、そこを超えるとさらに傾きが大きくなり、-2.3ほどになっていて、この領域では光学フォノン散乱が支配的となり、移動度を小さくしていると考えられる。
 
 80K以下の領域で測定すると、温度の下降とともに移動度を下げる、イオンか不純物散乱が効き始め、80K付近が移動度のピークとなり、それとり低温の領域では移動度が小さくなっていくと考えられる。
 
-\subsection*{(7)}
+\subsection*{(7)　半導体デバイスの活用}
 CPU内のトランジスタを考えてみると、CPUは数GHzで動作するので、遅延なく動作するには、ドレイン電流が流れるために1nsでもかかってしまうと、CPUのクロックより遅くなり、CPUの動作を制限してしまう。移動度が大きいと、ドレイン電流が即座に流れて、CPUの動作を制限しない。
 
 また、太陽電池において、高移動度の半導体デバイスを使えるようになると、大きくキャリアを拡散させることができ、性能を向上させることができる。
 
-\subsection*{(9)}
+\subsection*{(9)　パウ法の誤差}
 パウ法では電極の接点が点だと仮定しているが、
 実際の電極の接点は有限の大きさを持つので誤差が生じる。
 
@@ -188,12 +278,14 @@ CPU内のトランジスタを考えてみると、CPUは数GHzで動作する�
 
 \section{結論}
 
+本実験を通して、半導体中のキャリアの振る舞いを定性的に、また定量的にも理解を深めることができた。
 
+具体的にはホール効果によって、直接は測定することが難しい試料のキャリア濃度、移動度を間接的に測定し、移動度の意味、性質から、それらの温度依存性、活用までを考察し、深く理解することができた。
 
 \section{参考文献}
-[1]東京大学工学部：「電気電子情報第一(前期) 実験テキスト」, 2019.
+[1]東京大学工学部：「電気電子情報実験・演習第二　テキスト 第２分冊」, 2019.
 
-[2]廣瀬明：「電気電子計測」, 数理工学社, 2003.
+[2]柴田直：「半導体デバイス入門」, 数理工学社, 2014.
 
-[3]日高邦彦：「高電圧工学」, 数理工学社, 2013
+[3]岸野正剛：「半導体デバイスの基礎」, 丸善株式会社, 1995
 \end{document}
