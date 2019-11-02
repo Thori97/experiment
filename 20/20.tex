@@ -1,0 +1,54 @@
+\documentclass[dvipdfmx]{jsarticle}
+
+\usepackage[version=3]{mhchem}
+\usepackage{amsmath}
+\usepackage[siunitx]{circuitikz}
+\usepackage{graphicx}
+\usepackage{here}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\title{20 高電圧実験　 考察報告書　}
+\author{電子情報工学科 03-190449　堀 紡希}
+\date{\ 11月5日}
+\maketitle
+
+\section{実験結果}
+
+
+\section{検討・考察課題}
+\subsection*{1.}
+相対空気密度、湿度を測定しておく理由は、
+気温を$t^\circ$C、気圧を$p$mHg、絶対湿度$h$g/m$^{3}$とすると火花電圧は相対空気密度$\delta = \frac{0.386\times p}{273+t}$、$k = 1 + 0.002\left(\frac{h}{\delta} - 8.5\right)$として、補正後の火花電圧$V_{s}$は$V_{s} = V_{n}\cdot \delta \cdot k$と表されるので、気温、気圧、湿度は電圧の校正に影響を与えるから。
+
+\subsection*{2.}
+50Hzの家庭用電圧をそのまま電源とし、試験用変圧器で変換すると、家庭用電圧は、様々なところで電力を消費され、試験用変圧器に歪んで届くので、補正する必要がある。
+
+そこで、試験用変圧器の電源に歪みのない交流を発生させられる、正弦波発電機を使用している。
+
+
+また、
+\subsection*{3.}
+
+
+\subsection*{4.}
+
+
+\subsection*{5.}
+
+
+\subsection*{6.}
+
+\subsection*{7.}
+
+\subsection*{8.}
+
+
+\section{参考文献}
+[1]東京大学工学部：「電気電子情報第一(前期) 実験テキスト」, 2019.
+
+[2]廣瀬明：「電気電子計測」, 数理工学社, 2003.
+
+[3]日高邦彦：「高電圧工学」, 数理工学社, 2013
+\end{document}
