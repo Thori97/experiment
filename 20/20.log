@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.10.2)  2 NOV 2019 18:43
+=======
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.7.29)  5 NOV 2019 02:35
+>>>>>>> 053af2fe3435bc76b043985faac4443a121dadf7
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,26 +525,204 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 15.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 5.76599pt on input line 15.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
+(Font)              scaled to size 11.53198pt on input line 17.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 17.
+(Font)              scaled to size 11.53198pt on input line 17.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 21.
+(Font)              scaled to size 9.60999pt on input line 18.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+<<<<<<< HEAD
 (Font)              scaled to size 11.53198pt on input line 21.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 23.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 23.
+=======
+(Font)              scaled to size 9.60999pt on input line 18.
+File: A2.png Graphic file (type bmp)
+<A2.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 28--29
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 29.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 29.
+File: A3.png Graphic file (type bmp)
+<A3.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 39--40
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: A4.png Graphic file (type bmp)
+<A4.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 49--50
+ [] 
+ []
+
+File: A5.png Graphic file (type bmp)
+<A5.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 58--59
+ [] 
+ []
+
+
+Underfull \vbox (badness 1127) has occurred while \output is active []
+
+>>>>>>> 053af2fe3435bc76b043985faac4443a121dadf7
  [1
 
-] (./20.aux) ) 
+
+]
+File: A6.png Graphic file (type bmp)
+<A6.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 68--69
+ [] 
+ []
+
+File: B1.png Graphic file (type bmp)
+<B1.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 79--80
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: B2.png Graphic file (type bmp)
+<B2.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 89--90
+ [] 
+ []
+
+File: C21.png Graphic file (type bmp)
+<C21.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 100--101
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+File: C22.png Graphic file (type bmp)
+<C22.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 107--108
+ [] 
+ []
+
+File: C2.png Graphic file (type bmp)
+<C2.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 118--119
+ [] 
+ []
+
+File: C3.png Graphic file (type bmp)
+<C3.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 126--127
+ [] 
+ []
+
+File: C41.png Graphic file (type bmp)
+<C41.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 134--135
+ [] 
+ []
+
+File: C42.png Graphic file (type bmp)
+<C42.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 141--142
+ [] 
+ []
+
+[3]
+File: D11.png Graphic file (type bmp)
+<D11.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 154--155
+ [] 
+ []
+
+File: D12.png Graphic file (type bmp)
+<D12.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 161--162
+ [] 
+ []
+
+File: D13.png Graphic file (type bmp)
+<D13.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 168--169
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: D2.png Graphic file (type bmp)
+<D2.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 177--178
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Overfull \hbox (66.64688pt too wide) in paragraph at lines 235--236
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (43.21153pt too wide) detected at line 254
+\OML/cmm/m/it/10 ^^K \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ; ^^L \OT1/cmr/m/n/10
+ = []\OML/cmm/m/it/10 ; ^^M \OT1/cmr/m/n/10 = [][]
+ []
+
+File: 20_1.png Graphic file (type bmp)
+<20_1.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 260--261
+ [] 
+ []
+
+File: 20_2.png Graphic file (type bmp)
+<20_2.png>
+
+Overfull \hbox (4.13194pt too wide) in paragraph at lines 266--267
+ [] 
+ []
+
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+(./20.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  18521 strings out of 494735
  441260 string characters out of 6176126
  569299 words of memory out of 5000000
@@ -550,3 +732,14 @@ Here is how much of TeX's memory you used:
  62i,7n,56p,426b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on 20.dvi (1 page, 2888 bytes).
+=======
+ 30602 strings out of 493638
+ 719883 string characters out of 6141726
+ 841323 words of memory out of 5000000
+ 33865 multiletter control sequences out of 15000+600000
+ 544813 words of font info for 88 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 62i,8n,56p,10364b,940s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on 20.dvi (6 pages, 45344 bytes).
+>>>>>>> 053af2fe3435bc76b043985faac4443a121dadf7
